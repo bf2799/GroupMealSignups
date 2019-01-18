@@ -6,6 +6,7 @@ Using Google Forms, the group organizer can create meals in the calendar.
 An empty meal form has a date, type (lunch or dinner), start time, number of people to feed, special description, color, and, most importantly, a URL to sign up for that meal. If the organizer accidentally creates two of the same meal, the event will not be added to the calendar and a conflict email will be sent.
 When the calendar event is clicked on, the description displays all that information.
 The URL brings the user to a Google Form.
+![alt text](https://raw.githubusercontent.com/bf2799/GroupMealSignups/master/SignupCalendar.jpg)
 
 In the Google Form, the prospective volunteer enters their name, contact info, student name (for chaperoning parents), meal chosen (clicked URL  filled in by default), a description of the food to bring, and allergen alerts. The volunteer doesn't have the option of signing up for a meal that has been signed up for already (except in rare circumstance that forms for same meal submitted within seconds of each other). Once submitted, the description and color on the Google Calendar will change to reflect the submitted information.
 
