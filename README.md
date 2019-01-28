@@ -28,16 +28,54 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
     e. Add a short-answer question titled "Special Details"  
     f. Add a *REQUIRED* short-answer question titled "Email Address"  
     g. Go to RESPONSES, click on green and white Sheets logo  
-    h. Link the form to the Sheet created in Step (2).  
-4. In Google Sheet, rename the response sheet "Group Meal Creation" via right-clicking it on the bottom of the screen  
-5. Delete Sheet1 (default sheet) via right-clicking it on the bottom of the screen  
-6. 
+    h. Link the form to the Sheet created in Step (2)  
+4. In Google Sheet, rename the new response sheet "Group Meal Creation" by right-clicking it on the bottom of the screen  
+5. Delete Sheet1 (default sheet) by right-clicking it on the bottom of the screen  
+6. Create a Google Form and name it "(Organization) Group Meal Signup"  
+   **Order is important**  
+   a. Add a label with title "Contact Info" and subtitle "Reminders will be sent to email"  
+   b. Add a *REQUIRED* short-answer question titled "Name"  
+   c. Add a *REQUIRED* short-answer question titled "Email"  
+   d. Add a short-answer question titled "Phone Number"  
+   e. Add a short-answer question titled "Student Name" (or other affiliation identifier)  
+   f. Add a label with title "Volunteering Details"  
+   g. Add a *REQUIRED* multiple choice question titled "Meal Options (choose "No Change" if editing response)"  
+      i. The options will be filled in by the program, so add no options to start  
+   h. Add a long-answer question titled "Food Description"  
+   i. Add a long-answer question titled "Allergen Alerts"  
+   j. Go to RESPONSES, click on green and white Sheets logo  
+   k. Link the form to the Sheet created in Step (2)  
+7. In Google Sheet, rename the new response sheet "Group Meal Signup" by right-clicking it on the bottom of the screen  
+8. Click Add Sheet button (+) in bottom left of Google Sheet  
+   a. Name sheet "Group Meal Master"  
+   b. Fill A1 with "Date"  
+   c. Fill B1 with "Meal"  
+   d. Fill C1 with "Approximate Delivery Time"  
+   e. Fill D1 with "People to Feed Estimate"  
+   f. Fill E1 with "Special Details"  
+   g. Fill F1 with "Provider Name"  
+   h. Fill G1 with "Provider Email"  
+   i. Fill H1 with "Provider Phone"  
+   j. Fill I1 with "Provider Student Name" (or other affiliation identifier)  
+   k. Fill J1 with "Food Description"  
+   l. Fill K1 with "Allergen Alerts"  
+   m. Fill L1 with "Event ID"  
+   n. Fill M1 with "Trigger ID"  
+   o. Fill N1 with "Form ID"  
+   p. Fill O1 with "Check Below to Update"
+   q. Click on O2. Click on Insert-> Checkbox  
+9. Ensure the sheets are in order. If not drag to reorder. From left to right:  
+   1. "Group Meal Signup"  
+   2. "Group Meal Creation"  
+   3. "Group Meal Master"  
+10. 
 
 ## Setup Extra Options
 Google Calendar colors
-Google Calendar notifications/auto-emails (guaranteed in large-scale use)
+Google Calendar notifications/auto-emails (allows guarantee in large-scale use)
 Reminder email time before
 Breakfast, snack
+Change description on calendar from student name to 
 
 ## User Use
 
