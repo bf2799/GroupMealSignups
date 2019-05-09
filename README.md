@@ -33,7 +33,7 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
 5. Delete Sheet1 (default sheet) by right-clicking it on the bottom of the screen  
 6. Create a Google Form and name it "(Organization) Group Meal Signup"  
    **Order is important**  
-   a. Add a label with title "Contact Info" and subtitle "Reminders will be sent to email"  
+   a. Add a title and description with title "Contact Info" and subtitle "Reminders will be sent to email"  
    b. Add a *REQUIRED* short-answer question titled "Name"  
    c. Add a *REQUIRED* short-answer question titled "Email"  
    d. Add a short-answer question titled "Phone Number"  
@@ -41,8 +41,8 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    f. Add a label with title "Volunteering Details"  
    g. Add a *REQUIRED* multiple choice question titled "Meal Options (choose "No Change" if editing response)"  
       i. The options will be filled in by the program, so add no options to start  
-   h. Add a long-answer question titled "Food Description"  
-   i. Add a long-answer question titled "Allergen Alerts"  
+   h. Add a paragraph question titled "Food Description"  
+   i. Add a paragraph question titled "Allergen Alerts"  
    j. Go to RESPONSES, click on green and white Sheets logo  
    k. Link the form to the Sheet created in Step (2)  
 7. In Google Sheet, rename the new response sheet "Group Meal Signup" by right-clicking it on the bottom of the screen  
@@ -62,13 +62,31 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    m. Fill L1 with "Event ID"  
    n. Fill M1 with "Trigger ID"  
    o. Fill N1 with "Form ID"  
-   p. Fill O1 with "Check Below to Update"
+   p. Fill O1 with "Check Below to Update"  
    q. Click on O2. Click on Insert-> Checkbox  
 9. Ensure the sheets are in order. If not drag to reorder. From left to right:  
    1. "Group Meal Signup"  
    2. "Group Meal Creation"  
    3. "Group Meal Master"  
-10. 
+10. Open Google Calendar  
+   a. Ensure you are logged in with the same account used for the Sheet and Forms  
+   b. Click on Other Calendars -> Create new calendar  
+   c. Name the calendar something relevant (name not critical)   
+   d. Open Calendar settings  
+   e. Make available to public  
+   f. Click "Get shareable link" and record for future use or share with specific people  
+11. In Sheet, click on Tools-> Script Editor  
+12. Create new Script File called "Group Meal Addition"  
+13. Copy contents from "GroupMealAddition.js" in this repository and paste into script file  
+14. Add IDs to script file  
+   a. In master Sheet, copy URL from after "/spreadsheets/d/" to "/edit" (not inclusive). This is the Sheet ID  
+   b. On Line 3 in script file, paste inside single quotes (on sheetID line)  
+   c. In Group Meal Signup Form, copy URL from after "/forms/d" to "/edit" (not inclusive). This is the Form ID  
+   d. On Line 4 in script file, paste inside single quotes (on signupFormID line)  
+   e. In Group Meal Creation Form, copy URL from after "/forms/d" to "edit" (not inclusive)  
+   f. On Line 5 in script file, paste inside single quotes (on creationFormID line)  
+   g. In Calendar, open Settings and Sharing. Scroll down to "Calendar ID" and copy  
+   h. On Line 2 in script file, paste after first single quote before @ (on calendarID line)  
 
 ## Setup Extra Options
 Google Calendar colors
