@@ -1,3 +1,9 @@
+// IDs
+var calendarID = '@group.calendar.google.com';
+var sheetID = '';
+var signupFormID = '';
+var creationFormID = '';
+
 // Spreadsheet sheet numbers
 var groupMealSignupSheetNum = 0;
 var groupMealCreationSheetNum = 1;
@@ -8,26 +14,26 @@ var groupMealDurationMin = 30;
 var reminderEmailDaysBefore = 2;
 
 // Create reference to calendar
-var groupMealCalendar = CalendarApp.getCalendarById('topt445mt3v3e7vqp1539bt0ug@group.calendar.google.com');
+var groupMealCalendar = CalendarApp.getCalendarById(calendarID);
 
 // Initialize signup sheet
-var signupSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealSignupSheetNum];
+var signupSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealSignupSheetNum];
 var signupRange = signupSheet.getDataRange();
 var signupValues = signupRange.getValues();
 
 // Initialize creation sheet
-var creationSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealCreationSheetNum];
+var creationSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealCreationSheetNum];
 var creationRange = creationSheet.getDataRange();
 var creationValues = creationRange.getValues();
 
 // Initialize master sheet
-var masterSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealMasterSheetNum];
+var masterSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealMasterSheetNum];
 var masterRange = masterSheet.getDataRange();
 var masterValues = masterRange.getValues();
 
 // Initialize form IDs
-var signupForm = FormApp.openById('16g47LUedX6GT_k3DP_cBdukwNJ3Nc6DUTSY0V9VXyRM');
-var creationForm = FormApp.openById('1vJYTNrqVoul_KHpamKExH8AlteK7RjtHYOV8kMqpOGs');
+var signupForm = FormApp.openById(signupFormID);
+var creationForm = FormApp.openById(creationFormID);
 
 // Lines where conflicts/signup filling exist
 var creationConflictLine = 0;
@@ -36,17 +42,17 @@ var signupFillLine = 0;
 function updateSheets() {
   
   // Initialize signup sheet
-  signupSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealSignupSheetNum];
+  signupSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealSignupSheetNum];
   signupRange = signupSheet.getDataRange();
   signupValues = signupRange.getValues();
   
   // Initialize creation sheet
-  creationSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealCreationSheetNum];
+  creationSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealCreationSheetNum];
   creationRange = creationSheet.getDataRange();
   creationValues = creationRange.getValues();
   
   // Initialize master sheet
-  masterSheet = SpreadsheetApp.openById('1wL8nIwyHkSi1RMfowvF3ILaVRP_gwpWJnSKFObhCDYA').getSheets()[groupMealMasterSheetNum];
+  masterSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealMasterSheetNum];
   masterRange = masterSheet.getDataRange();
   masterValues = masterRange.getValues();
   
