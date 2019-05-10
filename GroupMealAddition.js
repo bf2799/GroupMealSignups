@@ -1,11 +1,11 @@
-// Spreadsheet sheet numbers
 var groupMealSignupSheetNum = 0;
 var groupMealCreationSheetNum = 1;
 var groupMealMasterSheetNum = 2;
 
-// Minutes a meal lasts by default
+// Defaults
 var groupMealDurationMin = 30;
 var reminderEmailDaysBefore = 2;
+var organizationName = 'None';
 
 // Create reference to calendar
 var groupMealCalendar = CalendarApp.getCalendarById('@group.calendar.google.com');
@@ -268,12 +268,12 @@ function draftSignupConflictEmail(signup) {
   
   return (
     '<!DOCTYPE html><html><head><base target="_top"></head>' + 
-    '<body><h2>Conflict With New Nashoba Robotics ' + signup.meal + ' on ' + signup.dateString +
+    '<body><h2>Conflict With New ' + organizationName + ' ' + signup.meal + ' on ' + signup.dateString +
     "</h2><p> Sorry. Your offer to volunteer came just after someone else signed up for the same meal." + 
     "<br /> You offered to bring " + signup.foodDescrip + " with the following allergy concerns: " +
     "<br />" + signup.allergy +
     "<br /><br /> Please click the following link to sign up for your choice of remaining available meals." + 
-    "<br /> https://docs.google.com/forms/d/e/1FAIpQLScg43LYIu0hOg7HawWbL0Sb3wETTNs9KJyUIkGZZe-vQoLpWw/viewform?usp=sf_link"
+    "<br /> https://_____?usp=sf_link"
   );
   
 }
@@ -282,7 +282,7 @@ function draftSignupConflictEmail(signup) {
 function sendSignupConflictEmail(signup) {
   MailApp.sendEmail({
     to: signup.email,
-    subject: 'Robotics Group Meal Signup Conflict',
+    subject: organizationName + ' Group Meal Signup Conflict',
     htmlBody: draftSignupConflictEmail(signup)});
 }
 
@@ -319,7 +319,7 @@ function updateCalendarSignup(signup) {
   var description = 'Estimated people: ' + signup.peopToFeed + 
     '\nGraciously Provided By: ' + signup.name + 
       '\nContact Info: ' + signup.email + ', ' + signup.phone + 
-        '\nStudent Name(s): ' + signup.student +
+        '\nAffiliation: ' + signup.student +
           '\nPlanned Food: ' + signup.foodDescrip + 
             '\nAllergen Alerts: ' + signup.allergy + 
               '\n\n' + signup.details;
@@ -337,8 +337,8 @@ function draftSignupReminderEmail(line) {
   
   return (
    '<!DOCTYPE html><html><head><base target="_top"></head>' + 
-    "<body><h2>Reminder: Nashoba Robotics " + masterValues[line][1] + ' on ' + masterSheetDateString +
-    "</h2><p> You graciously volunteered to bring a group " + masterValues[line][1].toLowerCase() + " to the high school for the Nashoba Robotics team." + 
+    "<body><h2>Reminder: " + organizationName + ' ' + masterValues[line][1] + ' on ' + masterSheetDateString +
+    "</h2><p> You graciously volunteered to bring a group " + masterValues[line][1].toLowerCase() + " to _____ for " + organizationName + "."
     "<br /> Date: " + masterSheetDateString + 
     "<br /> Time: " + masterValues[line][2] +  
     "<br /> People Expected: " + masterValues[line][3] + 
@@ -346,7 +346,7 @@ function draftSignupReminderEmail(line) {
     "<br /> Your allergen alerts included: " + masterValues[line][10] + 
     "<br /><br /> If you would like to edit your response, click the following link: <br />" + masterValues[line][13] + '&entry.397157629=No+Change' + 
     "<br /><br /> Thank you for volunteering!" +
-    "<br /> - Nashoba Robotics #1768"
+    "<br /> - " + organizationName
   );
   
 }
@@ -358,8 +358,8 @@ function draftSignupConfirmationEmail(signup) {
   
   return (
    '<!DOCTYPE html><html><head><base target="_top"></head>' + 
-    "<body><h2>Confirmation: Nashoba Robotics " + signup.meal + ' on ' + dateString +
-    "</h2><p> You graciously volunteered to bring a group " + signup.meal.toLowerCase() + " to the high school for the Nashoba Robotics team." + 
+    "<body><h2>Confirmation: " + organizationName + " " + signup.meal + ' on ' + dateString +
+    "</h2><p> You graciously volunteered to bring a group " + signup.meal.toLowerCase() + " to _____for " + organizationName + "." + 
     "<br /> Date: " + dateString + 
     "<br /> Time: " + signup.appDelivTime +  
     "<br /> People Expected: " + signup.peopToFeed + 
@@ -367,7 +367,7 @@ function draftSignupConfirmationEmail(signup) {
     "<br /> Your allergen alerts included: " + signup.allergy + 
     "<br /><br /> If you would like to edit your response, click the following link: <br />" + signup.formID + '&entry.397157629=No+Change' + 
     "<br /><br /> Thank you for volunteering!" +
-    "<br /> - Nashoba Robotics #1768"
+    "<br /> - " + organizationName
   );
   
 }
@@ -406,7 +406,7 @@ function sendSignupReminderEmail() {
     // Send email for reminder
     MailApp.sendEmail({
       to: masterValues[infoLine][6],
-      subject: 'Robotics Group Meal Signup Reminder',
+      subject: organizationName + ' Group Meal Signup Reminder',
       htmlBody: draftSignupReminderEmail(infoLine)});
     
     // Delete trigger that caused this reminder
@@ -427,7 +427,7 @@ function confirmSignup(signup) {
   // Send email for confirmation
   MailApp.sendEmail({
     to: signup.email,
-    subject: 'Robotics Group Meal Signup Confirmation',
+    subject: organizationName + ' Group Meal Signup Confirmation',
     htmlBody: draftSignupConfirmationEmail(signup)});
   
   // Create trigger for 2 days before event if trigger not already created
@@ -584,7 +584,7 @@ function draftCreationConflictEmail(creation) {
   
   return (
     '<!DOCTYPE html><html><head><base target="_top"></head>' + 
-    '<body><h2>Conflict With New Nashoba Robotics ' + creation.meal + ' on ' + creation.dateString +
+    '<body><h2>Conflict With New ' + organizationName + " " + creation.meal + ' on ' + creation.dateString +
     "</h2><p>The previous " + creation.dateString + " " + creation.meal.toLowerCase() + " had:" +
     "<br /> <b>-Approximate Delivery Time: </b>" + masterValues[creationConflictLine][3] +
     "<br /> <b>-People to Feed Estimate: </b>" + masterValues[creationConflictLine][4] +
@@ -595,7 +595,7 @@ function draftCreationConflictEmail(creation) {
     "<br /><br />" + 
     "Enter a new group meal event:" + "<br />" +
     "https://docs.google.com/forms/d/e/1FAIpQLSeTL8c5rqNMUpHgpqCJ5tICbaHj1fwRcXupvAWaNp9xLr6SKw/viewform?usp=sf_link" + 
-    "<br /> Or, resolve the conflict manually in 1768 Parent Scheduling Group Meal Master spreadsheet.</p></body></html>"
+    "<br /> Or, resolve the conflict manually in master spreadsheet.</p></body></html>"
     );
 }
 
@@ -603,7 +603,7 @@ function draftCreationConflictEmail(creation) {
 function sendCreationEmail(creation) {
   MailApp.sendEmail({
     to: creation.email,
-    subject: 'Robotics Meal Creation Conflict',
+    subject: organizationName + ' Meal Creation Conflict',
     htmlBody: draftCreationConflictEmail(creation)});
 }
 
@@ -899,7 +899,7 @@ function updateSpreadsheetChangeCalendar(event) {
             var description = 'Estimated people: ' + writeIn.peopToFeed + 
               '\nGraciously Provided By: ' + writeIn.name + 
                 '\nContact Info: ' + writeIn.email + ', ' + writeIn.phone + 
-                  '\nStudent Name(s): ' + writeIn.student +
+                  '\Affiliation: ' + writeIn.student +
                     '\nPlanned Food: ' + writeIn.foodDescrip + 
                       '\nAllergen Alerts: ' + writeIn.allergy + 
                         '\n\n' + writeIn.details;
