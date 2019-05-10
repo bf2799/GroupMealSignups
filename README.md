@@ -10,9 +10,9 @@ The URL brings the user to a Google Form.
 ![Signup Calendar](SignupCalendar.jpg)  
 Calendar meal with link for signup
 
-In the Google Form, the prospective volunteer enters their name, contact info, student name (for chaperoning parents), meal chosen (clicked URL  filled in by default), a description of the food to bring, and allergen alerts. The volunteer doesn't have the option of signing up for a meal that has been signed up for already (except in rare circumstance that forms for same meal submitted within seconds of each other). Once submitted, the description and color on the Google Calendar will change to reflect the submitted information.
+In the Google Form, the prospective volunteer enters their name, contact info, student name (for chaperoning parents), meal chosen (clicked URL  filled in by default), a description of the food to bring, and allergen alerts. The volunteer doesn't have the option of signing up for a meal that has been signed up for already. Once submitted, the description and color on the Google Calendar will change to reflect the submitted information.
 
-When a volunteer signs up for a meal, they will immediately receive a confirmation email. This will reiterate the information they just put into the form. In addition, the volunteer will receive an email reminder with the same information before their scheduled meal time (2 days by default). In the rare case that a conflict arises due to code overload from simultaneous submitted forms, the volunteer will receive a conflict email.
+When a volunteer signs up for a meal, they will immediately receive a confirmation email. This will reiterate the information they just entered into the form. In addition, the volunteer will receive an email reminder with the same information before their scheduled meal time (2 days by default). In the rare case that a conflict arises due to code overload from simultaneously-submitted forms, the volunteer will receive a conflict email.
 
 All the data is stored in one Google Sheet. That sheet has a checkbox that updates the calendar with any new information in case the owner wants to clean it up. The spreadsheet, except for deleting events, should not need to be used after set-up is complete.
 
@@ -27,8 +27,9 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
     d. Add a *REQUIRED* short-answer question titled "People to Feed Estimate"  
     e. Add a short-answer question titled "Special Details"  
     f. Add a *REQUIRED* short-answer question titled "Email Address"  
-    g. Go to RESPONSES, click on green and white Sheets logo  
-    h. Link the form to the Sheet created in Step (2)  
+    g. Click on Settings. Check "Edit after submit"  
+    h. Go to RESPONSES, click on green and white Sheets logo  
+    i. Link the form to the Sheet created in Step (2)  
 4. In Google Sheet, rename the new response sheet "Group Meal Creation" by right-clicking it on the bottom of the screen  
 5. Delete Sheet1 (default sheet) by right-clicking it on the bottom of the screen  
 6. Create a Google Form and name it "(Organization) Group Meal Signup"  
@@ -43,8 +44,9 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
       i. The options will be filled in by the program, so add no options to start  
    h. Add a paragraph question titled "Food Description"  
    i. Add a paragraph question titled "Allergen Alerts"  
-   j. Go to RESPONSES, click on green and white Sheets logo  
-   k. Link the form to the Sheet created in Step (2)  
+   j. Click on Settings. Check "Edit after submit"  
+   k. Go to RESPONSES, click on green and white Sheets logo  
+   l. Link the form to the Sheet created in Step (2)  
 7. In Google Sheet, rename the new response sheet "Group Meal Signup" by right-clicking it on the bottom of the screen  
 8. Click Add Sheet button (+) in bottom left of Google Sheet  
    a. Name sheet "Group Meal Master"  
@@ -80,13 +82,23 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
 13. Copy contents from "GroupMealAddition.js" in this repository and paste into script file  
 14. Add IDs to script file  
    a. In master Sheet, copy URL from after "/spreadsheets/d/" to "/edit" (not inclusive). This is the Sheet ID  
-   b. On Line 3 in script file, paste inside single quotes (on sheetID line)  
+   b. On Lines 14, 19, 24, 39, 44, and 49 in script file, paste inside single quotes  
    c. In Group Meal Signup Form, copy URL from after "/forms/d" to "/edit" (not inclusive). This is the Form ID  
-   d. On Line 4 in script file, paste inside single quotes (on signupFormID line)  
+   d. On Line 29 in script file, paste inside single quotes  
    e. In Group Meal Creation Form, copy URL from after "/forms/d" to "edit" (not inclusive)  
-   f. On Line 5 in script file, paste inside single quotes (on creationFormID line)  
+   f. On Line 30 in script file, paste inside single quotes  
    g. In Calendar, open Settings and Sharing. Scroll down to "Calendar ID" and copy  
-   h. On Line 2 in script file, paste after first single quote before @ (on calendarID line)  
+   h. On Line 11 in script file, paste after first single quote before @  
+   i. Save script file
+   j. Hover over Run -> Run Function. Scroll toward the bottom and click on "printMealOptionsID"  
+   k. Click on View -> Logs. Copy the number after the ID  
+   l. On Line 134 in script file, paste inside parentheses after "getItemsByID"  
+15. Specify email reminders  
+   a. On Line 8 in script file, type organization name inside single quotes (replace None)  
+   b. Open Group Signup Form. Copy whole URL  
+   c. On Line 276 in script file, paste URL to replace series of underscores  
+   d. On Line 341 in script file, replace first underscores with primary meal location  
+   e. On Line 362 in script file, replace underscores with primary meal location  
 
 ## Setup Extra Options
 Google Calendar colors
