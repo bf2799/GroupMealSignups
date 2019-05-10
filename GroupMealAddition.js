@@ -130,14 +130,8 @@ function updateSignupFormMealOptions() {
   // Add option to not change (for editing previous response)
   mealOptions.unshift("No Change");
   
-  // Uncomment for finding specific question ID to change on form
-  /*var items = signupForm.getItems();
-  for (i = 0; i < items.length; i++) {
-    Logger.log("ID: " + items[i].getId(), ': ' + items[i].getType());
-  }*/
-  
   // Set choices on signup form itself
-  signupForm.getItemById(1868456451).asListItem().setChoiceValues(mealOptions);
+  signupForm.getItemById().asListItem().setChoiceValues(mealOptions);
   
 }
 
@@ -983,8 +977,16 @@ function onSpreadsheetChange(event) {
 }
 
 ////////////////////////////////////
-///////// TRIGGERS TO MAKE /////////
+///////// ONE-RUN FUNCTIONS ////////
 ////////////////////////////////////
+
+// Finds specific question ID to change on form
+function printQuestionIDs() {
+  var items = signupForm.getItems();
+  for (i = 0; i < items.length; i++) {
+    Logger.log("ID: " + items[i].getId(), ': ' + items[i].getType());
+  }
+}
 
 // Create a trigger to run creation change when form submitted
 function makeCreationTrigger() {
