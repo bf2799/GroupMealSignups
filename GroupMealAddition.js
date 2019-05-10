@@ -981,11 +981,9 @@ function onSpreadsheetChange(event) {
 ////////////////////////////////////
 
 // Finds specific question ID to change on form
-function printQuestionIDs() {
+function printMealOptionsID() {
   var items = signupForm.getItems();
-  for (i = 0; i < items.length; i++) {
-    Logger.log("ID: " + items[i].getId(), ': ' + items[i].getType());
-  }
+  Logger.log("ID: " + items[6].getId(), ': ' + items[6].getType());
 }
 
 // Create a trigger to run creation change when form submitted
