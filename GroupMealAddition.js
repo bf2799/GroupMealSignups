@@ -1,9 +1,3 @@
-// IDs
-var calendarID = '@group.calendar.google.com';
-var sheetID = '';
-var signupFormID = '';
-var creationFormID = '';
-
 // Spreadsheet sheet numbers
 var groupMealSignupSheetNum = 0;
 var groupMealCreationSheetNum = 1;
@@ -14,26 +8,26 @@ var groupMealDurationMin = 30;
 var reminderEmailDaysBefore = 2;
 
 // Create reference to calendar
-var groupMealCalendar = CalendarApp.getCalendarById(calendarID);
+var groupMealCalendar = CalendarApp.getCalendarById('@group.calendar.google.com');
 
 // Initialize signup sheet
-var signupSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealSignupSheetNum];
+var signupSheet = SpreadsheetApp.openById('').getSheets()[groupMealSignupSheetNum];
 var signupRange = signupSheet.getDataRange();
 var signupValues = signupRange.getValues();
 
 // Initialize creation sheet
-var creationSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealCreationSheetNum];
+var creationSheet = SpreadsheetApp.openById('').getSheets()[groupMealCreationSheetNum];
 var creationRange = creationSheet.getDataRange();
 var creationValues = creationRange.getValues();
 
 // Initialize master sheet
-var masterSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealMasterSheetNum];
+var masterSheet = SpreadsheetApp.openById('').getSheets()[groupMealMasterSheetNum];
 var masterRange = masterSheet.getDataRange();
 var masterValues = masterRange.getValues();
 
 // Initialize form IDs
-var signupForm = FormApp.openById(signupFormID);
-var creationForm = FormApp.openById(creationFormID);
+var signupForm = FormApp.openById('');
+var creationForm = FormApp.openById('');
 
 // Lines where conflicts/signup filling exist
 var creationConflictLine = 0;
@@ -42,17 +36,17 @@ var signupFillLine = 0;
 function updateSheets() {
   
   // Initialize signup sheet
-  signupSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealSignupSheetNum];
+  signupSheet = SpreadsheetApp.openById('').getSheets()[groupMealSignupSheetNum];
   signupRange = signupSheet.getDataRange();
   signupValues = signupRange.getValues();
   
   // Initialize creation sheet
-  creationSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealCreationSheetNum];
+  creationSheet = SpreadsheetApp.openById('').getSheets()[groupMealCreationSheetNum];
   creationRange = creationSheet.getDataRange();
   creationValues = creationRange.getValues();
   
   // Initialize master sheet
-  masterSheet = SpreadsheetApp.openById(sheetID).getSheets()[groupMealMasterSheetNum];
+  masterSheet = SpreadsheetApp.openById('').getSheets()[groupMealMasterSheetNum];
   masterRange = masterSheet.getDataRange();
   masterValues = masterRange.getValues();
   
