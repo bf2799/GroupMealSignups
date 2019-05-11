@@ -338,13 +338,13 @@ function draftSignupReminderEmail(line) {
   return (
    '<!DOCTYPE html><html><head><base target="_top"></head>' + 
     "<body><h2>Reminder: " + organizationName + ' ' + masterValues[line][1] + ' on ' + masterSheetDateString +
-    "</h2><p> You graciously volunteered to bring a group " + masterValues[line][1].toLowerCase() + " to _____ for " + organizationName + "."
+    "</h2><p> You graciously volunteered to bring a group " + masterValues[line][1].toLowerCase() + " to _____ for " + organizationName + "." + 
     "<br /> Date: " + masterSheetDateString + 
     "<br /> Time: " + masterValues[line][2] +  
     "<br /> People Expected: " + masterValues[line][3] + 
     "<br /> Your food: " + masterValues[line][9] +
     "<br /> Your allergen alerts included: " + masterValues[line][10] + 
-    "<br /><br /> If you would like to edit your response, click the following link: <br />" + masterValues[line][13] + '&entry.397157629=No+Change' + 
+    "<br /><br /> If you would like to edit your response, click the following link: <br />" + masterValues[line][13] + '&entry._____=No+Change' + 
     "<br /><br /> Thank you for volunteering!" +
     "<br /> - " + organizationName
   );
@@ -365,7 +365,7 @@ function draftSignupConfirmationEmail(signup) {
     "<br /> People Expected: " + signup.peopToFeed + 
     "<br /> Your food: " + signup.foodDescrip +
     "<br /> Your allergen alerts included: " + signup.allergy + 
-    "<br /><br /> If you would like to edit your response, click the following link: <br />" + signup.formID + '&entry.397157629=No+Change' + 
+    "<br /><br /> If you would like to edit your response, click the following link: <br />" + signup.formID + '&entry._____=No+Change' + 
     "<br /><br /> Thank you for volunteering!" +
     "<br /> - " + organizationName
   );
@@ -594,7 +594,7 @@ function draftCreationConflictEmail(creation) {
     "<br /> <b>-People to Feed Estimate: </b>" + creation.peopToFeed + 
     "<br /><br />" + 
     "Enter a new group meal event:" + "<br />" +
-    "https://docs.google.com/forms/d/e/1FAIpQLSeTL8c5rqNMUpHgpqCJ5tICbaHj1fwRcXupvAWaNp9xLr6SKw/viewform?usp=sf_link" + 
+    "https://_____?usp=sf_link" + 
     "<br /> Or, resolve the conflict manually in master spreadsheet.</p></body></html>"
     );
 }
@@ -648,7 +648,7 @@ function updateCalendarCreation(creation) {
     creation.date,
     creation.endTime,
     {'description': 'Click link to sign up to bring ' + creation.meal.toLowerCase() + ' to feed ' + creation.peopToFeed + 
-    '\nhttps://docs.google.com/forms/d/e/1FAIpQLScg43LYIu0hOg7HawWbL0Sb3wETTNs9KJyUIkGZZe-vQoLpWw/viewform?usp=sf_link&entry.397157629=' + str + '\n\n' + creation.details}
+    '\nhttps://_____?usp=sf_link&entry._____=' + str + '\n\n' + creation.details}
   );
   
   // Get event ID
@@ -860,7 +860,7 @@ function updateSpreadsheetChangeCalendar(event) {
             if (event.getColor() !== "11")
               event.setColor("11"); // Red;
             var description = 'Click link to sign up to bring ' + writeIn.meal.toLowerCase() + ' to feed ' + 
-              writeIn.peopToFeed + '\nhttps://docs.google.com/forms/d/e/1FAIpQLScg43LYIu0hOg7HawWbL0Sb3wETTNs9KJyUIkGZZe-vQoLpWw/viewform?usp=sf_link&entry.397157629=' + str + '\n\n' + writeIn.details;
+              writeIn.peopToFeed + '\nhttps://_____?usp=sf_link&entry._____=' + str + '\n\n' + writeIn.details;
             if (event.getDescription() !== description)
               event.setDescription(description);
           }
