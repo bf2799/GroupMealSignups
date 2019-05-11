@@ -95,10 +95,17 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    l. On Line 134 in script file, paste inside parentheses after "getItemsByID"  
 15. Specify email reminders  
    a. On Line 8 in script file, type organization name inside single quotes (replace None)  
-   b. Open Group Signup Form. Copy whole URL  
+   b. Open Group Signup Form. Click on "Preview" (eye). Copy whole URL  
    c. On Line 276 in script file, paste URL to replace series of underscores  
-   d. On Line 341 in script file, replace first underscores with primary meal location  
-   e. On Line 362 in script file, replace underscores with primary meal location  
+   d. On Line 651 and 863 in script file, paste URL to replace first series of underscores  
+   e. On Lines 341 and 362 in script file, replace first underscores with primary meal location  
+   f. Open Group Meal Signup Form. Click on three dots in corner then "Get pre-filled link"  
+   g. For Meal Options, choose "No Change." Click "Get Link"
+   h. Click "Copy Link" near bottom left. Paste in a notepad or new tab. Copy the number toward the end after "&entry." before "=No+Change"  
+   i. On Lines 347, 368, 651, and 863 in script file, replace underscores after "&entry." with the copied number  
+   j. Open Group Meal Creation Form. Click on "Preview" (eye). Copy whole URL  
+   k. On Line 597, replace series of underscores with copied URL  
+16. 
 
 ## Setup Extra Options
 Google Calendar colors
