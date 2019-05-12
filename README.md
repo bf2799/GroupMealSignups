@@ -105,7 +105,15 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    i. On Lines 347, 368, 651, and 863 in script file, replace underscores after "&entry." with the copied number  
    j. Open Group Meal Creation Form. Click on "Preview" (eye). Copy whole URL  
    k. On Line 597, replace series of underscores with copied URL  
-16. 
+16. Create triggers for running  
+   a. Save script file. Hover over Run -> Run Function. Scroll down and click "makeCreationTrigger"  
+   b. Hover over Run -> Run Function. Scroll down and click "makeSignupTrigger"  
+   c. Click Edit -> Current project triggers  
+   d. Click "Add Trigger" in bottom right  
+   e. For "Choose which function to run," choose "updateSignupFormMealOptions." For "Select event source," choose "From spreadsheet." For "Select event type," select "On change." Click "Save"  
+   f. Click "Add Trigger" in bottom right  
+   g. For "Choose which function to run," choose "onSpreadsheetChange." For "Select event source," choose "From spreadsheet." For "Select event type," select "On change." Click "Save"  
+
 
 ## Setup Extra Options
 Google Calendar colors
