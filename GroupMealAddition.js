@@ -386,7 +386,7 @@ function sendSignupReminderEmail() {
     var appDelivTime = masterValues[i][2]; // Get the time box on the sheet
         
     // Set date more specifically
-    var times = stringToTime(signup.appDelivTime); 
+    var times = stringToTime(appDelivTime); 
     date.setHours(times[0]);
     date.setMinutes(times[1]);
     
