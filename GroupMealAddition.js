@@ -967,9 +967,9 @@ function onSpreadsheetChange(event) {
   // If the spreadsheet update box is true
   //   Update the calendar
   //   Set the box to false
-  if (masterValues[1][14] == true) {
+  if (masterValues[0][15] == true) {
     updateSpreadsheetChangeCalendar(event);
-    masterSheet.getRange(2, 15).setValue(false);
+    masterSheet.getRange(1, 16).setValue(false);
     masterRange = masterSheet.getDataRange();
     masterValues = masterRange.getValues();
   }
@@ -983,7 +983,7 @@ function onSpreadsheetChange(event) {
 // Finds specific question ID to change on form
 function printMealOptionsID() {
   var items = signupForm.getItems();
-  Logger.log("ID: " + items[6].getId(), ': ' + items[6].getType());
+  Logger.log("ID: " + items[6].getId() + ': ' + items[6].getType());
 }
 
 // Create a trigger to run creation change when form submitted
