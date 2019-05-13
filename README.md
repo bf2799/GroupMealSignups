@@ -137,6 +137,7 @@ All the data is stored in one Google Sheet. This sheet has a checkbox that updat
    * On Line 6 in script file, change duration of meals in minutes  
 
 ## User Use  
+The Google Calendar has a shareable link that should be communicated to potential volunteers. Claimed and available meals on the calendar are marked in different colors. All claimed meals on the calendar can be browsed for volunteer name, food type, allergy concerns, or lack thereof (to remind the volunteer). Additionally, each available meal on the calendar have a link leading to a signup form. Any preliminary information about the meal can be entered by the volunteer. When submitted, a confirmation email will be sent to the volunteer. The confirmation email has a link to edit the signup form. This way, a volunteer can sign up without specific food plans. A fixed number of days before the meal, the volunteer will receive a reminder email with the same information as the confirmation email. Food plans can be entered via the edit-form link if not done so already.
 
 ## Limitations  
    * Only 50 triggers can be active at once, and 4 are already reserved. Therefore, only 46 reminder emails can be queued at any given time  
