@@ -10,11 +10,11 @@ The URL brings the user to a Google Form.
 ![Signup Calendar](SignupCalendar.jpg)  
 Calendar meal with link for signup
 
-In the Google Form, the prospective volunteer enters their name, contact info, student name (for chaperoning parents), meal chosen (clicked URL  filled in by default), a description of the food to bring, and allergen alerts. The volunteer doesn't have the option of signing up for a meal that has been signed up for already. Once submitted, the description and color on the Google Calendar will change to reflect the submitted information.
+In the Google Form, the prospective volunteer enters their name, contact info, student name (for chaperoning parents), meal chosen (clicked meal filled in by default), a description of the food to bring, and allergen alerts. The volunteer doesn't have the option of signing up for a meal that has been claimed already. Once submitted, the description and event color on the Google Calendar will change to reflect the submitted information.
 
-When a volunteer signs up for a meal, they will immediately receive a confirmation email. This will reiterate the information they just entered into the form. In addition, the volunteer will receive an email reminder with the same information before their scheduled meal time (2 days by default). In the rare case that a conflict arises due to code overload from simultaneously-submitted forms, the volunteer will receive a conflict email.
+When volunteers sign up for meals, they will immediately receive a confirmation email. This will reiterate the information they just entered into the form. In addition, volunteers will receive an email reminder with the same information before their scheduled meal time (2 days by default). In the rare case that a conflict arises due to code overload from simultaneously-submitted forms, the volunteer will receive a conflict email.
 
-All the data is stored in one Google Sheet. That sheet has a checkbox that updates the calendar with any new information in case the owner wants to clean it up. The spreadsheet, except for deleting events, should not need to be used after set-up is complete.
+All the data is stored in one Google Sheet. This sheet has a checkbox that updates the calendar with any new information in case the owner wants to clean it up. The spreadsheet, except for deleting events, should not need to be used after set-up is complete.
 
 ## Necessary Setup
 1. Have (1) meal organizer complete all the following steps
