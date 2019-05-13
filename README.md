@@ -64,8 +64,8 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    m. Fill L1 with "Event ID"  
    n. Fill M1 with "Trigger ID"  
    o. Fill N1 with "Form ID"  
-   p. Fill O1 with "Check Below to Update"  
-   q. Click on O2. Click on Insert-> Checkbox  
+   p. Fill O1 with "Check Right to Update"  
+   q. Click on P1. Click on Insert-> Checkbox  
 9. Ensure the sheets are in order. If not drag to reorder. From left to right:  
    1. "Group Meal Signup"  
    2. "Group Meal Creation"  
