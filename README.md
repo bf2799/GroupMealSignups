@@ -120,6 +120,7 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    * Colors are corresponded with a number: https://developers.google.com/apps-script/reference/calendar/event-color  
    * Available meal numbers can have numbers replaced in script file on lines 658, 860, and 861  
    * Claimed meals can have numbers replaced in script file on lines 316, 317, and 924  
+   
 **Google Calendar Notifications/Automatic Emails** (allows guarantee in large-scale use)  
    * Allows guaranteed email reminders in program since only 46 programmed reminder emails can be queued at any time  
    * Downside: Everybody gets an email reminder, not just the people signing up  
@@ -127,9 +128,11 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    * Open Calendar "Settings and sharing"  
    * Scroll down to "Event notifications." Add either email or notification for specific amount of time before  
    * "General notifications" can also be changed just below "Event notifications"  
+   
 **Reminder Email Time**  
    * Time before meal to send reminder email can be modified. Default is 2 days  
    * On Line 7 in script file, change number of days  
+   
 **Meal Duration on Calendar**  
    * On Line 6 in script file, change duration of meals in minutes  
 
