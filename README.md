@@ -22,7 +22,7 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
 3. Create a Google Form and name it "(Organization) Group Meal Entry" (name not critical).  
     **Order is important**  
     a. Add a *REQUIRED* date field titled "Date"  
-    b. Add a *REQUIRED* multiple choice question titled "Meal Options" with answers "Lunch" and "Dinner"  
+    b. Add a *REQUIRED* multiple choice question titled "Meal Options" with desired meal types (Ex. Lunch, Dinner)    
     c. Add a *REQUIRED* time field titled "Approximate Delivery Time"  
     d. Add a *REQUIRED* short-answer question titled "People to Feed Estimate"  
     e. Add a short-answer question titled "Special Details"  
@@ -116,22 +116,27 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
 
 ## Additional Settings Options: Setup  
 **Google Calendar Event Colors**  
-   Default available meal is red. Default claimed meal is pale red  
-   Colors are corresponded with a number: https://developers.google.com/apps-script/reference/calendar/event-color  
-   Available meal numbers can have numbers replaced in script file on lines 658, 860, and 861  
-   Claimed meals can have numbers replaced in script file on lines 316, 317, and 924     
+   * Default available meal is red. Default claimed meal is pale red  
+   * Colors are corresponded with a number: https://developers.google.com/apps-script/reference/calendar/event-color  
+   * Available meal numbers can have numbers replaced in script file on lines 658, 860, and 861  
+   * Claimed meals can have numbers replaced in script file on lines 316, 317, and 924     
 **Google Calendar Notifications/Automatic Emails** (allows guarantee in large-scale use)  
-   Allows guaranteed email reminders in large-scale use of program since only 46 programmed reminder emails can be queued at any time  
-   
-Reminder email time before
-Breakfast, snack
-Change description on calendar from student name to 
+   * Allows guaranteed email reminders in program since only 46 programmed reminder emails can be queued at any time  
+   * Downside: Everybody gets an email reminder, not just the people signing up  
+   * Open Google Calendar.  
+   * Open Calendar "Settings and sharing"  
+   * Scroll down to "Event notifications." Add either email or notification for specific amount of time before  
+   * "General notifications" can also be changed just below "Event notifications"  
+**Reminder Email Time**  
+   * Time before meal to send reminder email can be modified. Default is 2 days  
+   * On Line 7 in script file, change number of days  
+**Meal Duration on Calendar**  
+   * On Line 6 in script file, change duration of meals in minutes  
 
-## User Use
+## User Use  
 
-## Limitations
-Size if email reminder important due to triggers
-Manual deletion of event necessary, no email reminder if event deleted
-Initial entry time-consuming
-Real-time email conflict signup buggy
-Triggers could add up, needs to be cleaned occasionally
+## Limitations  
+   * Only 50 triggers can be active at once, and 4 are already reserved. Therefore, only 46 reminder emails can be queued at any given time  
+   * To delete an event, it must be manually deleted from the Calendar. There is no built-in email reminder if an event is deleted. However, this is a general setting for the Calendar  
+   * There is no function to generate a meal weekly or monthly. The initial entering of meals will therefore be time-consuming  
+   * Functions take a few seconds to run. If forms are submitted within seconds of each other, the signup conflict logic may not have run yet. If this happens, there is a chance that no indication of two people signing up for same day will occur  
