@@ -114,10 +114,15 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    f. Click "Add Trigger" in bottom right  
    g. For "Choose which function to run," choose "onSpreadsheetChange." For "Select event source," choose "From spreadsheet." For "Select event type," select "On change." Click "Save"  
 
-
-## Setup Extra Options
-Google Calendar colors
-Google Calendar notifications/auto-emails (allows guarantee in large-scale use)
+## Additional Settings Options: Setup  
+**Google Calendar Event Colors**  
+   Default available meal is red. Default claimed meal is pale red  
+   Colors are corresponded with a number: https://developers.google.com/apps-script/reference/calendar/event-color  
+   Available meal numbers can have numbers replaced in script file on lines 658, 860, and 861  
+   Claimed meals can have numbers replaced in script file on lines 316, 317, and 924     
+**Google Calendar Notifications/Automatic Emails** (allows guarantee in large-scale use)  
+   Allows guaranteed email reminders in large-scale use of program since only 46 programmed reminder emails can be queued at any time  
+   
 Reminder email time before
 Breakfast, snack
 Change description on calendar from student name to 
