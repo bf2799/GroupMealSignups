@@ -119,7 +119,7 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    * Default available meal is red. Default claimed meal is pale red  
    * Colors are corresponded with a number: https://developers.google.com/apps-script/reference/calendar/event-color  
    * Available meal numbers can have numbers replaced in script file on lines 658, 860, and 861  
-   * Claimed meals can have numbers replaced in script file on lines 316, 317, and 924     
+   * Claimed meals can have numbers replaced in script file on lines 316, 317, and 924  
 **Google Calendar Notifications/Automatic Emails** (allows guarantee in large-scale use)  
    * Allows guaranteed email reminders in program since only 46 programmed reminder emails can be queued at any time  
    * Downside: Everybody gets an email reminder, not just the people signing up  
