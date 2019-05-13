@@ -8,7 +8,7 @@ var reminderEmailDaysBefore = 2;
 var organizationName = 'None';
 
 // Create reference to calendar
-var groupMealCalendar = CalendarApp.getCalendarById('@group.calendar.google.com');
+var groupMealCalendar = CalendarApp.getCalendarById('');
 
 // Initialize signup sheet
 var signupSheet = SpreadsheetApp.openById('').getSheets()[groupMealSignupSheetNum];
@@ -273,7 +273,7 @@ function draftSignupConflictEmail(signup) {
     "<br /> You offered to bring " + signup.foodDescrip + " with the following allergy concerns: " +
     "<br />" + signup.allergy +
     "<br /><br /> Please click the following link to sign up for your choice of remaining available meals." + 
-    "<br /> https://_____?usp=sf_link"
+    "<br /> _____?usp=sf_link"
   );
   
 }
@@ -359,7 +359,7 @@ function draftSignupConfirmationEmail(signup) {
   return (
    '<!DOCTYPE html><html><head><base target="_top"></head>' + 
     "<body><h2>Confirmation: " + organizationName + " " + signup.meal + ' on ' + dateString +
-    "</h2><p> You graciously volunteered to bring a group " + signup.meal.toLowerCase() + " to _____for " + organizationName + "." + 
+    "</h2><p> You graciously volunteered to bring a group " + signup.meal.toLowerCase() + " to _____ for " + organizationName + "." + 
     "<br /> Date: " + dateString + 
     "<br /> Time: " + signup.appDelivTime +  
     "<br /> People Expected: " + signup.peopToFeed + 
@@ -594,7 +594,7 @@ function draftCreationConflictEmail(creation) {
     "<br /> <b>-People to Feed Estimate: </b>" + creation.peopToFeed + 
     "<br /><br />" + 
     "Enter a new group meal event:" + "<br />" +
-    "https://_____?usp=sf_link" + 
+    "_____?usp=sf_link" + 
     "<br /> Or, resolve the conflict manually in master spreadsheet.</p></body></html>"
     );
 }
@@ -648,7 +648,7 @@ function updateCalendarCreation(creation) {
     creation.date,
     creation.endTime,
     {'description': 'Click link to sign up to bring ' + creation.meal.toLowerCase() + ' to feed ' + creation.peopToFeed + 
-    '\nhttps://_____?usp=sf_link&entry._____=' + str + '\n\n' + creation.details}
+    '\n_____?usp=sf_link&entry._____=' + str + '\n\n' + creation.details}
   );
   
   // Get event ID
@@ -860,7 +860,7 @@ function updateSpreadsheetChangeCalendar(event) {
             if (event.getColor() !== "11")
               event.setColor("11"); // Red;
             var description = 'Click link to sign up to bring ' + writeIn.meal.toLowerCase() + ' to feed ' + 
-              writeIn.peopToFeed + '\nhttps://_____?usp=sf_link&entry._____=' + str + '\n\n' + writeIn.details;
+              writeIn.peopToFeed + '\n_____?usp=sf_link&entry._____=' + str + '\n\n' + writeIn.details;
             if (event.getDescription() !== description)
               event.setDescription(description);
           }
