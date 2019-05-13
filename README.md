@@ -1,4 +1,5 @@
 # Group Meal Signups
+
 ## Overview
 Group Meal Signups is a Javascript project that works with Google APIs to allow a team signup mechanism for meals.
 First, a Google Calendar is set up that will contain all team meals.
