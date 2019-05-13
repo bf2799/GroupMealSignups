@@ -88,14 +88,14 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
    e. In Group Meal Creation Form, copy URL from after "/forms/d" to "edit" (not inclusive)  
    f. On Line 30 in script file, paste inside single quotes  
    g. In Calendar, open Settings and Sharing. Scroll down to "Calendar ID" and copy  
-   h. On Line 11 in script file, paste after first single quote before @  
+   h. On Line 11 in script file, paste inside single quotes
    i. Save script file
    j. Hover over Run -> Run Function. Scroll toward the bottom and click on "printMealOptionsID"  
    k. Click on View -> Logs. Copy the number after the ID  
    l. On Line 134 in script file, paste inside parentheses after "getItemsByID"  
 15. Specify email reminders  
    a. On Line 8 in script file, type organization name inside single quotes (replace None)  
-   b. Open Group Signup Form. Click on "Preview" (eye). Copy whole URL  
+   b. Open Group Meal Signup Form. Click on "Preview" (eye). Copy whole URL  
    c. On Line 276 in script file, paste URL to replace series of underscores  
    d. On Line 651 and 863 in script file, paste URL to replace first series of underscores  
    e. On Lines 341 and 362 in script file, replace first underscores with primary meal location  
@@ -108,7 +108,7 @@ All the data is stored in one Google Sheet. That sheet has a checkbox that updat
 16. Create triggers for running  
    a. Save script file. Hover over Run -> Run Function. Scroll down and click "makeCreationTrigger"  
    b. Hover over Run -> Run Function. Scroll down and click "makeSignupTrigger"  
-   c. Click Edit -> Current project triggers  
+   c. On script file, click Edit -> Current project triggers  
    d. Click "Add Trigger" in bottom right  
    e. For "Choose which function to run," choose "updateSignupFormMealOptions." For "Select event source," choose "From spreadsheet." For "Select event type," select "On change." Click "Save"  
    f. Click "Add Trigger" in bottom right  
